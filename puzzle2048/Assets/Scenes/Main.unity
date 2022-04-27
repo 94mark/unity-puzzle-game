@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17811793}
   - component: {fileID: 17811792}
+  - component: {fileID: 17811794}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -205,6 +206,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &17811794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17811791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19059b1c2d418ea4a9b97706cda7f18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  n:
+  - {fileID: 5480623661821061530, guid: a92857ef2f2cb3643bc86c4642c60a9f, type: 3}
+  - {fileID: 1753544193476076735, guid: 02d9d692998c6de4281eedfee92c9875, type: 3}
+  - {fileID: 3025760416133445081, guid: 3be1d5343cfb03443946463dfdc6685f, type: 3}
+  - {fileID: 5848568852300965549, guid: 3170612eb3f5cfc488df8bb1b8795ab8, type: 3}
+  - {fileID: 2798645738308211087, guid: 8e56ddbd64b6a4b4fa8316c9f2872cf2, type: 3}
+  - {fileID: 6183249552257503496, guid: 12346682fd489c5419d7a3e7a7bef6ac, type: 3}
+  - {fileID: 4014287270873471854, guid: aace3d9dd7192a94b8e26c1a1962afd5, type: 3}
+  - {fileID: 7126792993846735908, guid: 26f9446dfea1d1a488d3933222b1f6bd, type: 3}
+  - {fileID: 8915255937176039360, guid: bb43543e8d18e1d4c9c1a2c78eecda11, type: 3}
+  - {fileID: 7197978689560412361, guid: faf2f850a879d884c8346dacc5f10e10, type: 3}
+  - {fileID: 2014938788473904691, guid: 2f10d63ea4531544f923386f300ee8ab, type: 3}
+  - {fileID: 2080226410039796803, guid: cc02e27920c943746a71726c56de3812, type: 3}
+  - {fileID: 3488173269548138958, guid: 9a9e460495018f147ab2ece78fff1b04, type: 3}
+  - {fileID: 4945894878521987631, guid: 099901bfbc8aba14085ad38f086c94d5, type: 3}
+  - {fileID: 4795888304268436190, guid: e5197e75992fd31449eb8dc0c78bc646, type: 3}
+  - {fileID: 4823321269366697594, guid: 0517e6404654d38409db7cca066eb0bb, type: 3}
+  - {fileID: 5078425649292011030, guid: 8684c516dd35ac440aae139ffa444296, type: 3}
 --- !u!1 &302008636
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +592,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 868357867}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 17811794}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &868357867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,7 +992,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1501966676}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 17811794}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1501966676
 MonoBehaviour:
   m_ObjectHideFlags: 0
