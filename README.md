@@ -2,6 +2,7 @@
 2048 퍼즐게임 제작
 
 https://user-images.githubusercontent.com/90877724/165516747-80cb33f4-bfba-4aae-a9f3-33a86651be40.mp4
+
 ![20220427_210605](https://user-images.githubusercontent.com/90877724/165516782-5e2ba448-6610-453e-beea-8122b4c6451d.png)
 
 
