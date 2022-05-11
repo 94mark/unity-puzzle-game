@@ -83,7 +83,13 @@ for(x = 0; x <= 3; x++)
 
 - 결합(Combine) : 이동 전 좌표와 이동 될 좌표가 비어있지 않고, 두개가 같고 둘다 combine 태그가 없다면 이동 전 좌표에서 이동 될 좌표로 이동 후 파괴, 이동 될 좌표는 2배, combine 태그 설정
 
-<img width="89" alt="20220511_182247" src="https://user-images.githubusercontent.com/90877724/167816335-724118e0-7f03-4ddb-8fcb-0c52f4983585.png">
+<img width="189" alt="20220511_182247" src="https://user-images.githubusercontent.com/90877724/167816335-724118e0-7f03-4ddb-8fcb-0c52f4983585.png">
+
+
+### 2-2. 애니메이션 세팅
+- Spawn, Combine, Plus, Quit 애니메이션 구현, Trigger 방식으로 작동
+-  블록 생성 및 결합, 점수 증가, 게임종료 창 생성 시 애니메이션 실행
+
 
 
 ### 3. 문제 해결 내용
