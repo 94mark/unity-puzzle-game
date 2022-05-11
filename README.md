@@ -16,9 +16,9 @@ https://user-images.githubusercontent.com/90877724/165516747-80cb33f4-bfba-4aae-
 
 ## 2. 핵심 구현 내용
 ### 2-1. 이동 및 결합 로직
-<img width="90" alt="20220511_181223" src="https://user-images.githubusercontent.com/90877724/167815320-f230fcae-e322-432e-8f25-022746f03ad3.png">
+<img width="190" alt="20220511_181223" src="https://user-images.githubusercontent.com/90877724/167815320-f230fcae-e322-432e-8f25-022746f03ad3.png">
 - 이동(Move) : 이동 될 좌표가 비어있고 이동 전 좌표가 존재하면 이동 될 좌표로 이동
-<img width="176" alt="20220511_182039" src="https://user-images.githubusercontent.com/90877724/167815910-60a5eba8-9eae-4b06-9a61-695fe0cf4960.png">
+<img width="250" alt="20220511_182039" src="https://user-images.githubusercontent.com/90877724/167815910-60a5eba8-9eae-4b06-9a61-695fe0cf4960.png">
 - 왼쪽방향 이동 시
 ```c#
 for(y = 0; y <= 3; y++)
@@ -33,7 +33,7 @@ for(y = 0; y <= 3; y++)
   }
 }
 ```
-<img width="43" alt="20220511_183245" src="https://user-images.githubusercontent.com/90877724/167818301-7e714631-5782-4a84-9e37-3e4dac5f745c.png">
+<img width="100" alt="20220511_183245" src="https://user-images.githubusercontent.com/90877724/167818301-7e714631-5782-4a84-9e37-3e4dac5f745c.png">
 
 - 오른쪽 방향 이동 시
 ```c#
