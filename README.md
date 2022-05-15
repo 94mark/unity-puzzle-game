@@ -90,7 +90,7 @@ for(x = 0; x <= 3; x++)
 - Spawn, Combine, Plus, Quit 애니메이션 구현, Trigger 방식으로 작동
 -  블록 생성 및 결합, 점수 증가, 게임종료 창 생성 시 애니메이션 실행
 
-### 2-3 입력 값 설정
+### 2-3 [입력 값 설정](https://github.com/94mark/unity-puzzle-game/blob/5c56006aa02f0e5394cae6ad2cb5760df676cc44/puzzle2048/Assets/Scripts/GameManager.cs#L33)
 - 마우스/손가락 drag 방향 설정 로직, Touch.Moved 이동 포지션의 좌표에서 Touch.Began 최초 터치 포지션의 차를 방향 벡터화(gap)
 ```c#
 gap = (Input.GetMouseButton(0) ? Input.mousePosition : (Vector3)Input.GetTouch(0).position) - firstPos;
@@ -135,9 +135,7 @@ void MoveOrCombine(int x1, int y1, int x2, int y2)
             score += (int)Mathf.Pow(2, j + 2);
         }
 ```
-
-### 3. 문제 해결 내용
-### 3-1. 
+### 2-4. [점수 및 게임 종료](https://github.com/94mark/unity-puzzle-game/blob/5c56006aa02f0e5394cae6ad2cb5760df676cc44/puzzle2048/Assets/Scripts/GameManager.cs#L66)
 
 
 ```c#
