@@ -137,8 +137,3 @@ void MoveOrCombine(int x1, int y1, int x2, int y2)
 ```
 ### 2-4. [점수 및 게임 종료](https://github.com/94mark/unity-puzzle-game/blob/5c56006aa02f0e5394cae6ad2cb5760df676cc44/puzzle2048/Assets/Scripts/GameManager.cs#L66)
 
-
-```c#
-```
-
-``
