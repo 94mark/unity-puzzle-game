@@ -8,7 +8,7 @@ https://user-images.githubusercontent.com/90877724/165516747-80cb33f4-bfba-4aae-
 
 ## 1. 프로젝트 개요
 ### 1.1 개발 인원/기간 및 포지션
-- 1인, 총 3일 소요
+- 1인, 총 5일 소요
 ### 1.2 개발 환경
 - Unity 2020.3.16f
 - 언어 : C#
@@ -90,7 +90,51 @@ for(x = 0; x <= 3; x++)
 - Spawn, Combine, Plus, Quit 애니메이션 구현, Trigger 방식으로 작동
 -  블록 생성 및 결합, 점수 증가, 게임종료 창 생성 시 애니메이션 실행
 
+### 2-3 입력 값 설정
+- 마우스/손가락 drag 방향 설정 로직, Touch.Moved 이동 포지션의 좌표에서 Touch.Began 최초 터치 포지션의 차를 방향 벡터화(gap)
+```c#
+gap = (Input.GetMouseButton(0) ? Input.mousePosition : (Vector3)Input.GetTouch(0).position) - firstPos;
+gap.Normalize();
+```
+- 위/아래/오른쪽/왼쪽을 4분할 후 드래그 시 x, y 좌표의 방향에 따른 범위 설정, 방향에 맞는 이동 로직 반복문 추가
+```c#
+// 위
+if (gap.y > 0 && gap.x > -0.5f && gap.x < 0.5f) for (x = 0; x <= 3; x++) for (y = 0; y <= 2; y++) for (i = 3; i >= y + 1; i--) MoveOrCombine(x, i - 1, x, i);
+// 아래
+else if (gap.y < 0 && gap.x > -0.5f && gap.x < 0.5f) for (x = 0; x <= 3; x++) for (y = 3; y >= 1; y--) for (i = 0; i <= y - 1; i++) MoveOrCombine(x, i + 1, x, i);
+// 오른쪽
+else if (gap.x > 0 && gap.y > -0.5f && gap.y < 0.5f) for (y = 0; y <= 3; y++) for (x = 0; x <= 2; x++) for (i = 3; i >= x + 1; i--) MoveOrCombine(i - 1, y, i, y);
+// 왼쪽
+else if (gap.x < 0 && gap.y > -0.5f && gap.y < 0.5f) for (y = 0; y <= 3; y++) for (x = 3; x >= 1; x--) for (i = 0; i <= x - 1; i++) MoveOrCombine(i + 1, y, i, y);
+else return;
+```
+- [이동 및 결합 함수 구현](https://github.com/94mark/unity-puzzle-game/blob/5c56006aa02f0e5394cae6ad2cb5760df676cc44/puzzle2048/Assets/Scripts/GameManager.cs#L96)
+```c#
+void MoveOrCombine(int x1, int y1, int x2, int y2)
+    {
+        // 이동 될 좌표에 비어있고, 이동 전 좌표에 존재하면 이동
+        if (Square[x2, y2] == null && Square[x1, y1] != null)
+        {
+            move = true;
+            Square[x1, y1].GetComponent<Moving>().Move(x2, y2, false);
+            Square[x2, y2] = Square[x1, y1];
+            Square[x1, y1] = null;
+        }
 
+        // 둘다 같은 수일때 결합
+        if (Square[x1, y1] != null && Square[x2, y2] != null && Square[x1, y1].name == Square[x2, y2].name && Square[x1, y1].tag != "Combine" && Square[x2, y2].tag != "Combine")
+        {
+            move = true;
+            for (j = 0; j <= 16; j++) if (Square[x2, y2].name == n[j].name + "(Clone)") break;
+            Square[x1, y1].GetComponent<Moving>().Move(x2, y2, true);
+            Destroy(Square[x2, y2]);
+            Square[x1, y1] = null;
+            Square[x2, y2] = Instantiate(n[j + 1], new Vector3(1.2f * x2 - 1.8f, 1.2f * y2 - 1.8f, 0), Quaternion.identity);
+            Square[x2, y2].tag = "Combine";
+            Square[x2, y2].GetComponent<Animator>().SetTrigger("Combine");
+            score += (int)Mathf.Pow(2, j + 2);
+        }
+```
 
 ### 3. 문제 해결 내용
 ### 3-1. 
